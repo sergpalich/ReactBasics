@@ -1,9 +1,10 @@
 import './App.css';
-import Card from './Card1';
+import Card from './card';
 import {useState} from 'react';
 
 function App() {
 
+  const [step, setStep] = useState(0);
   const tutorialData = [
     {
     title: "Dedica moltes hores",
@@ -28,19 +29,8 @@ function App() {
     image: " ",
   
   }
-
-
-]
-  
-
-
-  const [step, setStep] = useState(
-    <div className="textArea">
-      <h1>{tutorialData[0].title} </h1>
-      <p>{tutorialData[0].description} </p>
-    </div>
-  );
-  const handleClick = () => {
+] 
+  /* const handleClick = () => {
     
     setStep = (step) => {
         tutorialData.map ((step)=>(
@@ -50,17 +40,14 @@ function App() {
         </div>
         ))}
         
-      }
-  
-  
+      } */
 
-
+  const elementoActual = tutorialData[step]
   return (
-    <div className="App">
-      <Card />
-      <p> {step} </p>
+    <div>
+      <Card elementoActual= {elementoActual} />  
     </div>
   );
-}
+};
 
 export default App;
