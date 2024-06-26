@@ -30,22 +30,15 @@ function App() {
   
   }
 ] 
-  /* const handleClick = () => {
-    
-    setStep = (step) => {
-        tutorialData.map ((step)=>(
-          <div className="textArea">
-          <h1>{step.title} </h1>
-          <p>{step.description} </p>
-        </div>
-        ))}
-        
-      } */
+  const currentCardData = tutorialData[step]
 
-  const elementoActual = tutorialData[step]
+  function nextStep() {
+    setStep (prev => prev+1)
+  }
+
   return (
     <div>
-      <Card elementoActual= {elementoActual} />  
+      <Card currentCardData= {currentCardData}  nextStep={nextStep} />  
     </div>
   );
 };

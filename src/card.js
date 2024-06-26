@@ -1,9 +1,12 @@
 const Card = (props) => {
-    const elementoActual = props.elementoActual;
+    const currentCardData = props.currentCardData;
+    const nextStep = props.nextStep;
+
     return (
     <div>
-    <h1>{elementoActual.title} </h1>
-    <p>{elementoActual.description} </p> 
+    <h1>{currentCardData.title} </h1>
+    <p>{currentCardData.description} </p> 
+    <button onClick={nextStep}>Next step</button>
     </div>
 )};
  
