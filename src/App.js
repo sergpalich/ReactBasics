@@ -38,16 +38,20 @@ function App() {
   }
 ] 
   const currentCardData = tutorialData[step]
+  
 
   function nextStep() {
     setStep (prev => (prev+1)%tutorialData.length)
   }
 
+  function prevStep() {
+    setStep (prev => (prev-1)%tutorialData.length)
+  }
 
   
   return (
     <div>
-      <Card1 currentCardData= {currentCardData}  nextStep={nextStep} />  
+      <Card1 currentCardData= {currentCardData}  nextStep={nextStep} prevStep={prevStep} step={step} />  
     </div>
   );
 };
