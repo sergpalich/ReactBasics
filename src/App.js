@@ -6,9 +6,7 @@ import programming from "../src/assets/programming.svg"
 import meditation from "../src/assets/meditation.svg"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
-
-
+import Indicator from './components/Indicador';
 
 function App() {
 
@@ -48,10 +46,25 @@ function App() {
     setStep (prev => (prev-1)%tutorialData.length)
   }
 
+  const handleStepClick = (index) => {
+    setStep(index);
+  }
+
   
   return (
     <div>
-      <Card1 currentCardData= {currentCardData}  nextStep={nextStep} prevStep={prevStep} step={step} />  
+      <Card1 
+        currentCardData= {currentCardData} 
+        nextStep={nextStep} 
+        prevStep={prevStep} 
+        step={step}>  
+      </Card1> 
+
+      <Indicator 
+        step={step}  
+        tutorialData={tutorialData.length}  
+        onStepClick={handleStepClick}
+      />  
     </div>
   );
 };
