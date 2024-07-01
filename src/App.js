@@ -52,20 +52,20 @@ function App() {
 
   
   return (
-    <div>
+    <>
       <Card1 
         currentCardData= {currentCardData} 
         nextStep={nextStep} 
         prevStep={prevStep} 
-        step={step}>  
+        step={step}
+        handleStepClick={handleStepClick}
+        tutorialData={tutorialData}>  
+
+        
       </Card1> 
 
-      <Indicator 
-        step={step}  
-        tutorialData={tutorialData.length}  
-        onStepClick={handleStepClick}
-      />  
-    </div>
+       
+    </>
   );
 };
 
